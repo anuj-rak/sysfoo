@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	tools{
-		maven 'Maven 3.6.3'
+		maven 'Maven 3.6.1'
 	}
 
 	stages{
@@ -22,4 +22,10 @@ pipeline{
 			sh 'mvn package -DskipTests'
 		}
 	}
+
+	post{
+    		always{
+        		echo 'This pipeline is completed..'
+    		}
+  	}
 }
