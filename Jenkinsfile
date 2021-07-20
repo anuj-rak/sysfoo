@@ -8,18 +8,24 @@ pipeline{
 
 	stages{
 		stage('build'){
-			echo 'compile maven app'
-			sh 'mvn compile'
+			steps{
+				echo 'compile maven app'
+				sh 'mvn compile'
+			}
 		}
 
 		stage('test'){
-			echo 'test maven app'
-			sh 'mvn clean test'
+			steps{
+				echo 'test maven app'
+				sh 'mvn clean test'
+			}
 		}
 
 		stage('package'){
-			echo 'package maven app'
-			sh 'mvn package -DskipTests'
+			steps{
+				echo 'package maven app'
+				sh 'mvn package -DskipTests'
+			}
 		}
 	}
 
